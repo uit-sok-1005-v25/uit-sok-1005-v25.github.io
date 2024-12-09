@@ -18,7 +18,7 @@ Til hver sesjon vil det være et tema. I kursplan er pensum angitt på datacamp 
 
 ## Faglærerinfo  
 - [Dejene G. Kidane](https://uit.no/ansatte/derek.clark){:target="blank"} (fagansvarlig)
-- [Amund](https://uit.no/ansatte/person?p_document_id=41418){:target="blank"}
+- [Amund Jenssen](https://uit.no/ansatte/person?p_document_id=41418){:target="blank"}
 
 
 ## Pensum
