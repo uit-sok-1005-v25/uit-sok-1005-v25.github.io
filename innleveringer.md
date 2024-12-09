@@ -1,12 +1,7 @@
 {% include navbar.html %}{% include top-box.html %}
-# Sok-xxxx Mikroøkonomi   
+# Sok-1005 Data science...  
 
 ## Innleveringer 
-
-- Arbeidskrav er obligatorisk, men inngår ikke i mappen.
-- Mappeinnleveringer er obligatoriske, og danner grunnlag for karakter A-F på kurset.
-- Skriftlige mappeoppgaver leveres i [Wiseflow](https://europe.wiseflow.net/participant/){:target="blank"}. 
-
 
 | Type oppgave                       | Innleveringsfrist | Ressurser |
 |------------------------------------|-------------------|-----------|
