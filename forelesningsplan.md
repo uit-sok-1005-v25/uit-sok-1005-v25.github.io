@@ -1,5 +1,5 @@
 {% include navbar.html %}{% include top-box.html %}
-# Course plan SOK-1005 Spring 2024 
+# Course plan SOK-1005 Spring 2025 
 
 | Time           | Session           | Theme/Resources             |
 |----------------|-----------------|--------------------|
