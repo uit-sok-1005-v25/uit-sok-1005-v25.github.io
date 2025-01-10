@@ -11,6 +11,7 @@
 |||Introduction to R datacamp|
 |||Introduction to the Tidyverse [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
 |||Here you will find a small digital book about Tidyverse, The Tidyverse Cookbook|
+|||[Test Questions](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/test_Questions.R)|
 |17/01    |2          |Importing data into R             |
 |||Section “Import” in RfDC|
 |||Introduction to Importing Data in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
