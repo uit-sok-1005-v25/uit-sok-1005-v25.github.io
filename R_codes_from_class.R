@@ -57,11 +57,12 @@ str(gapminder)
 
 gapminder %>% select(country,year,pop)
 
+# Advanced selection 
 gapminder %>% 
-  select(starts_with("c"))
+  select(starts_with("c")) # select variables that starts with letter c
 
 gapminder %>% 
-  select(ends_with(c("try","Exp")))
+  select(ends_with(c("try","Exp"))) # select variables that ends with the expression try and Exp
 
 
 #' Task 2. Filter the data from Norway, Sweden, or Denmark 
