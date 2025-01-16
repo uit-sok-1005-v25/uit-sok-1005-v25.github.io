@@ -19,6 +19,7 @@
 |||Introduction to Importing Data in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
 |||Intermediate Importing Data in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
 |||All online books about R gathered in one place in the Big Book of R|
+|||[Small Task](https://docs.google.com/document/d/1pO1gXmxr-8rRIMlgWqjWrTUmalwMwB_-dXWxyxTRgJk/edit?tab=t.0)|
 24/01    |3          |	Data Wrangling intro              |
 |||“Transform” section in  [RfDC](https://r4ds.hadley.nz/)|
 |||Cleaning Data in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
