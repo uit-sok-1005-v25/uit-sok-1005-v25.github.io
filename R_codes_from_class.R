@@ -260,42 +260,196 @@ gapminder %>%
 
 
 #' Task 19. Filter the data from Norway, Sweden, or Denmark 
-#' before and including 1970. And select the variables
+#' after and including 1970. And select the variables
 #' country, year, gdpPercap. And rename gdpPercap by gdpc
+
+# long-format 
+gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,gdpPercap) %>% 
+  rename(gdpc = gdpPercap)
+  
 
 
 #' Task 20. Change the above data to wider format
+gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,gdpPercap) %>% 
+  rename(gdpc = gdpPercap) %>% 
+  pivot_wider(names_from = year, # year is the key variable 
+              values_from = gdpc)
 
+gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,gdpPercap) %>% 
+  rename(gdpc = gdpPercap) %>% 
+  pivot_wider(names_from = country, # country is the key variable 
+              values_from = gdpc)
+               
 
-#' Task 21: chnage the data back to long format
+#' Task 21: change the data back to long format
 
+gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,gdpPercap) %>% 
+  rename(gdpc = gdpPercap) %>% 
+  pivot_wider(names_from = country, 
+              values_from = gdpc) %>% 
+  pivot_longer(-year,names_to = "country",
+               values_to = "gdpc")
 
 #' Merging/joining dataframes  
 
+df1 <- gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,gdpPercap) %>% 
+  rename(gdpc = gdpPercap)
 
 
+df2 <- gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,pop) 
 
+df1; df2
+
+
+#left_join()
+
+left_join(df1,df2) # this works
+
+# however, this is a good practice 
+left_join(df1,df2, by = c("country","year"))
+
+#  third data frame 
+df3 <- gapminder %>% 
+  filter(country %in% c("Norway","Sweden","Denmark"),
+         year >=1970) %>% 
+  select(country,year,lifeExp) 
+
+df3
+
+# adding the third data frame 
+left_join(df1,df2, by = c("country","year")) %>% 
+  left_join(df3, by = c("country","year"))
 
 
 #' Task 22. Find the correlation between lifeExp and gdpPercap for all countries
 #' and sort in ascending  order. And also in descending order 
 
+# Ascending order 
+gapminder %>%
+  group_by(country) %>%
+  summarize(correlation = cor(lifeExp, gdpPercap)) %>% 
+  arrange(correlation)
 
+# descending order 
+gapminder %>%
+  group_by(country) %>%
+  summarize(correlation = cor(lifeExp, gdpPercap)) %>% 
+  arrange(desc(correlation))
 
 #' Task 23:  From the previous task, take the top two and bottom two countries.
 #' And plot lifeExp vs gdpPercap per country 
 
+gapminder %>% 
+  filter(country %in% c("France", "Austria", "Kuwait","Madagascar")) %>% 
+  ggplot(aes(x = lifeExp, y = gdpPercap, colour = country))+
+  geom_point(alpha = 0.9)+
+  xlab("Life Expectancy")+
+  ylab("GDP per capita")+
+  ggtitle("Plot of Life Expectancy vs GDP per capita")
+
+# scale matters 
+gapminder %>% 
+  filter(country %in% c("Madagascar")) %>% 
+  ggplot(aes(x = lifeExp, y = gdpPercap, colour = country))+
+  geom_point(alpha = 0.9)+
+  xlab("Life Expectancy")+
+  ylab("GDP per capita")+
+  ggtitle("Plot of Life Expectancy vs GDP per capita")
 
 
 #' Task 24: calculate the percentage and logaritmic growth of gdp for Norway 
 
+gapminder %>% 
+  filter(country %in% c("Norway")) %>%
+  rename(gdp = gdpPercap) %>% 
+  mutate(perc.diff = 100*(gdp-lag(gdp))/lag(gdp),
+         log.diff = 100*c(NA, diff(log(gdp))))
+
+# using summarize function in stead of mutate ()
+gapminder %>% 
+  filter(country %in% c("Norway")) %>%
+  rename(gdp = gdpPercap) %>% 
+  summarise(perc.diff = 100*(gdp-lag(gdp))/lag(gdp),
+         log.diff = 100*c(NA, diff(log(gdp))))
+  
+  
 
 #' Task 25: calculate the logaritmic growth in gdp for all countries
 
-
+gapminder %>% 
+  select(country, year, gdpPercap) %>% 
+  rename(gdp = gdpPercap) %>% 
+  group_by(country) %>% 
+  mutate(perc.diff = 100*(gdp-lag(gdp))/lag(gdp),
+         log.diff = 100*c(NA, diff(log(gdp))))
+  
 #' Task 26: what country has the highest and lowest average logaritmic growth in gdp?  
 
 #' lowest
+gapminder %>% 
+  select(country, year, gdpPercap) %>% 
+  rename(gdp = gdpPercap) %>% 
+  group_by(country) %>% 
+  mutate(perc.diff = 100*(gdp-lag(gdp))/lag(gdp),
+         log.diff = 100*c(NA, diff(log(gdp)))) %>% 
+  
+  group_by(country) %>% 
+  summarise(mean.gdp = mean(log.diff, na.rm = TRUE)) %>% 
+  arrange(mean.gdp)
+  
 
 
 #' highest
+
+gapminder %>% 
+  select(country, year, gdpPercap) %>% 
+  rename(gdp = gdpPercap) %>% 
+  group_by(country) %>% 
+  mutate(perc.diff = 100*(gdp-lag(gdp))/lag(gdp),
+         log.diff = 100*c(NA, diff(log(gdp)))) %>% 
+  
+  group_by(country) %>% 
+  summarise(mean.gdp = mean(log.diff, na.rm = TRUE)) %>% 
+  arrange(desc(mean.gdp))
+
+
+# desnity plot 
+
+gapminder %>% 
+  select(continent, country,year,gdpPercap) %>% 
+  rename(gdp = gdpPercap) %>% 
+  group_by(country) %>% 
+  mutate(log.diff = 100*c(NA, diff(log(gdp)))) %>% 
+  ggplot()+
+  geom_density(aes(x=log.diff, group = continent, fill = continent, alpha = 0.3))+
+  ggtitle("Average GDP growth (log) by continent")+
+  xlim(c(-25,50))+
+  xlab("% average growth in GDP")
+  
+
+
+
+
+
+
+
+
+
