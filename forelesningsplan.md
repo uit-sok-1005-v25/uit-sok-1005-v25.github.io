@@ -25,7 +25,12 @@
 |||“Transform” section in  [RfDC](https://r4ds.hadley.nz/)|
 |||Cleaning Data in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
 |||Data Manipulation with dplyr [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||[R codes from class(Complete codes for the task)](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Sol_small_Task.R)|
 |31/01    |  4      |    |
+||||
+||||
+||||
+||||
    
 
 
