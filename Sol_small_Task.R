@@ -260,7 +260,7 @@ df_tidy %>%
   geom_smooth(method = lm, se = FALSE) # note the geom_smooth()
 
 
-# Analysis - Global temperature
+# Some data analysis 
 library(broom)
 
 df_tidy %>%
