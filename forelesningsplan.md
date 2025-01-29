@@ -28,6 +28,25 @@
 |||[R codes from class(Complete codes for the task)](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Sol_small_Task.R)|
 |31/01|Deadline: 16:00|Submit mandatory [Portfolio Assignment 1](https://docs.google.com/document/d/1-MzRu4dsBwtIPBFWYnNz01lHbQgNWAFu4Xi_jzsHoHg/edit?tab=t.0)|
 |    |        |    |
+|31/01|4|Joining and wrangling data|
+|||Seksjon “Communicate” i  [RfDC](https://r4ds.hadley.nz/)|
+|||Joining Data with dplyr datacamp|
+|||Communicating with data in the tidyverse datacamp|
+||||
+||5|Data Visualization|
+|||Seksjon “Visualize” i  [RfDC](https://r4ds.hadley.nz/)|
+|||Introduction to Data Visualization with ggplot2 [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||Intermediate Data Visualization with ggplot2 [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+||||
+||6|More on Data Wrangling|
+|||Reshaping Data with tidyr [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||Programming with dplyr [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+||||
+||7|Dates, Time and Strings|
+|||Working with Dates and Times in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||String Manipulation with stringr in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+||||
+||||
 ||||
 ||||
 ||||
