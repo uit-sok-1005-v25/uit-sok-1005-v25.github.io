@@ -35,16 +35,16 @@
 |||[Set of questions for the session tommorow](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/SOK-Questions_lecture4.R)|
 ||5|Data Visualization|
 |||Seksjon “Visualize” i  [RfDC](https://r4ds.hadley.nz/)|
-|||Introduction to Data Visualization with ggplot2 [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
-|||Intermediate Data Visualization with ggplot2 [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||Introduction to Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-1)|
+|||Intermediate Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-2)|
 ||||
 ||6|More on Data Wrangling|
-|||Reshaping Data with tidyr [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
-|||Programming with dplyr [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
+|||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
 ||||
 ||7|Dates, Time and Strings|
-|||Working with Dates and Times in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
-|||String Manipulation with stringr in R [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
+|||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
+|||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
 ||||
 ||||
 ||||
