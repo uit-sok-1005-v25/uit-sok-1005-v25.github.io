@@ -1,6 +1,6 @@
 
-# Try the following exercise, we will work them together in class tommorrow.
-# The exercise is based on superstore sales data in different province of Canada.
+# Try the following exercises, we will work them together in the class tomorrow.
+# The exercise is based on superstore sales data in different provinces of Canada.
 #' 
 #' From reading list:
 #' Chiu, David
