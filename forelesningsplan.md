@@ -32,7 +32,7 @@
 |||Seksjon “Communicate” i  [RfDC](https://r4ds.hadley.nz/)|
 |||Joining Data with dplyr datacamp|
 |||Communicating with data in the tidyverse datacamp|
-||||
+|||[Set of questions for the session tommorow](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/SOK-Questions_lecture4.R)|
 ||5|Data Visualization|
 |||Seksjon “Visualize” i  [RfDC](https://r4ds.hadley.nz/)|
 |||Introduction to Data Visualization with ggplot2 [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Ffree-introduction-to-r&dc_referrer=https%3A%2F%2Fuit-sok-1005-v24.github.io%2F)|
