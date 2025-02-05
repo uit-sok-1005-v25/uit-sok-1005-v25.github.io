@@ -33,14 +33,14 @@
 |||Communicating with data in the tidyverse datacamp|
 |||[Set of questions for the session tommorow](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/SOK-Questions_lecture4.R)|
 |||[R codes from the class today](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/SOK-Questions_with_solutions.R)|
-||5|Data Visualization|
+|07/02|5|Data Visualization|
 |||Seksjon “Visualize” i  [RfDC](https://r4ds.hadley.nz/)|
 |||Introduction to Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-1)|
 |||Intermediate Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-2)|
-||6|More on Data Wrangling|
+|14/02|6|More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
-||7|Dates, Time and Strings|
+|21/04|7|Dates, Time and Strings|
 |||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
 |||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
 ||||
