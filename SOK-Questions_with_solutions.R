@@ -281,6 +281,16 @@ segments %>%
 #' What segment produced the highest profit?
 
 
+#' Task 18:  For the last 3 months of 2012, calculate the total Sales by month, 
+#' for Alberta and Yukon in the Customer_Segment, Corporate, and Consumer. 
+
+
+#' Task 19: Make a plot of the monthly total Sales in British Columbia and 
+#'          Ontario in 2009, 2010, and 2011.
+
+
+# Task 20: Following the last question, identify the months where the total Sales in Ontario
+#'         is greater than the total Sales in "British Columbia".
 
 
 
