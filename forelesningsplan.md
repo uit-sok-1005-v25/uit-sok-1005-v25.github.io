@@ -44,8 +44,9 @@
 |21/04|7|Dates, Time and Strings|
 |||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
 |||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
-||||
-||||
+|||[Working with date](https://www.statmethods.net/input/dates.html)|
+|||[Dates and Time](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Dates_and_times_lubridate.R)|
+|||[Working with time series](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Working_with_time_series.R)|
 ||||
 ||||
 ||||
