@@ -276,20 +276,16 @@ segments %>%
 
 
 
-#' Task 17: Find average profit per customer segment and product category in 2011, for all provinces except
+#' Task 17: Find the average profit per customer segment and product category in 2011, for all provinces except
 #' Nunavut, Newfoundland and Manitoba.
 #' What segment produced the highest profit?
 
 
-#' Task 18:  For the last 3 months of 2012, calculate the total Sales by month, 
-#' for Alberta and Yukon in the Customer_Segment, Corporate, and Consumer. 
-
-
-#' Task 19: Make a plot of the monthly total Sales in British Columbia and 
+#' Task 18: Make a plot of the monthly total Sales in British Columbia and 
 #'          Ontario in 2009, 2010, and 2011.
 
 
-# Task 20: Following the last question, identify the months where the total Sales in Ontario
+# Task 19: Following the last question, identify the months where the total Sales in Ontario
 #'         is greater than the total Sales in "British Columbia".
 
 
@@ -297,7 +293,7 @@ segments %>%
 #' A bit more advanced
 
 
-#' Task 18: What customer segment and product category has the highest correlation between
+#' Task 20: What customer segment and product category has the highest correlation between
 #' unit price and order_quantity?
 
 
