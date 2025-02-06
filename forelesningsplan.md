@@ -37,6 +37,7 @@
 |||Seksjon “Visualize” i  [RfDC](https://r4ds.hadley.nz/)|
 |||Introduction to Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-1)|
 |||Intermediate Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-2)|
+||Task|[Task](https://docs.google.com/document/d/15JftXNs6orZ4SZEbp19HbZJcvnp1JKlN45nUgn2K4ZM/edit?usp=sharing)|
 |14/02|6|More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
