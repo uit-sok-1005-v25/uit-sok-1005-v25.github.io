@@ -297,3 +297,5 @@ segments %>%
 #' unit price and order_quantity?
 
 
+#Task: Replicate the code for three provinces, i.e., Nunavu, British Columbia, Ontirruwa,  
+superstore$Province
