@@ -39,6 +39,7 @@
 |||Intermediate Data Visualization with ggplot2 [datacamp](https://app.datacamp.com/learn/courses/data-visualization-with-ggplot2-2)|
 ||Task|[Task](https://docs.google.com/document/d/15JftXNs6orZ4SZEbp19HbZJcvnp1JKlN45nUgn2K4ZM/edit?usp=sharing)|
 |||[Solution to the task](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Task_solution.R)|
+|||[Updated R codes for superstore](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/superstore_updated.R)|
 |14/02| Deadline: 16:00|[Assignment 2](https://docs.google.com/document/d/1S0Wa4DwJgMrzdGD9QQG8l-9nVQ9iIhdZ1OBxGzhewwM/edit?usp=sharing)|
 |14/02|6|More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
