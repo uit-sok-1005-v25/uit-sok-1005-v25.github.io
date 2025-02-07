@@ -285,17 +285,23 @@ segments %>%
 #'          Ontario in 2009, 2010, and 2011.
 
 
-# Task 19: Following the last question, identify the months where the total Sales in Ontario
+# Task 19:In the last problem, instead of the line plots, 
+ # use bar plot to show the total monthly sales.
+
+
+# Task 20: Following the previous question, identify the months where the total Sales in Ontario
 #'         is greater than the total Sales in "British Columbia".
 
+# Task 21: Calculate the share of profits per product category and 
+ # display the results using a Pie chart
 
 
 #' A bit more advanced
 
 
-#' Task 20: What customer segment and product category has the highest correlation between
+#' Task 22: What customer segment and product category has the highest correlation between
 #' unit price and order_quantity?
 
 
-#Task: Replicate the code for three provinces, i.e., Nunavu, British Columbia, Ontirruwa,  
+#Task 23: Replicate the code for three provinces, i.e., Nunavu, British Columbia, Ontirruwa,  
 superstore$Province
