@@ -367,17 +367,197 @@ superstore %>%
 
 
 
-  
 
 # Task 21: Calculate the share of profits per product category and 
-# display the results using a Pie chart
+ # display the results using Pie chart
 
+  superstore %>% 
+   group_by(product_category) %>% 
+   summarise(mean_profit = mean(profit)) %>%
+   ungroup() %>% 
+   mutate(total.profit = sum(mean_profit)) %>% #summarise() is not helpful here
+   #share profit 
+   group_by(product_category) %>% 
+   mutate(share = 100*mean_profit/total.profit) %>% 
+   ggplot(aes(x = "", y = share, fill = product_category)) +
+   geom_bar(stat = "identity", width = 0.1) + 
+   coord_polar(theta = "y") + 
+   labs(title = "Mean Profit by Product Category") + 
+   theme_void() + #removes all background elements, axes, gridlines, 
+    #and text from the plot, leaving only the data visualization (useful for pie charts). 
+   scale_fill_manual(values = c("Furniture" = "blue", #Color customization
+                                "Office Supplies" = "red", 
+                                "Technology" = "green"))
+ 
+  # Normally, geom_bar() defaults to stat = "count", which counts observations.
+  # Here, stat = "identity" means the exact y values (share) are used instead of counts.
+  # width = 1 ensures that the bars take up the full width, making them appear as segments rather than narrow bars.
+ 
+  # coord_polar(theta = "y"): Transforms the bar chart into a pie chart 
+  # by mapping the y aesthetic to the radial axis (theta = "y").
+  # Without coord_polar(), the chart would be a regular bar chart.
 
+  # Adding text 
+ #By default, the values are not displayed inside each slice. 
+ #You can add them with geom_text. Note that position_stack(vjust = 0.5) will place 
+ #the labels in the correct position.
+ superstore %>% 
+   group_by(product_category) %>% 
+   summarise(mean_profit = mean(profit)) %>%
+   ungroup() %>% 
+   mutate(total.profit = sum(mean_profit)) %>% 
+   #share profit 
+   group_by(product_category) %>% 
+   mutate(share = 100*mean_profit/total.profit) %>% 
+   ggplot(aes(x = "", y = share, fill = product_category)) +
+   geom_bar(stat = "identity", width = 1) + 
+   coord_polar(theta = "y") + 
+   labs(title = "Mean Profit by Product Category") + 
+   theme_void() + 
+   scale_fill_manual(values = c("Furniture" = "blue", 
+                                "Office Supplies" = "red", 
+                                "Technology" = "green"))+
+   # Add the numbers inside the pie 
+   geom_text(aes(label = share),
+             position = position_stack(vjust = 0.5))
+   
+ 
+ 
+ # Round the numbers 
+ superstore %>% 
+   group_by(product_category) %>% 
+   summarise(mean_profit = mean(profit)) %>%
+   ungroup() %>% 
+   mutate(total.profit = sum(mean_profit)) %>% 
+   #share profit 
+   group_by(product_category) %>% 
+   mutate(share = round(100*mean_profit/total.profit,2)) %>% #rounding 
+   ggplot(aes(x = "", y = share, fill = product_category)) +
+   geom_bar(stat = "identity", width = 1) + 
+   coord_polar(theta = "y") + 
+   labs(title = "Mean Profit by Product Category") + 
+   theme_void() + 
+   scale_fill_manual(values = c("Furniture" = "blue", 
+                                "Office Supplies" = "red", 
+                                "Technology" = "green"))+
+   # Add the numbers inside the pie 
+   geom_text(aes(label = share),
+             position = position_stack(vjust = 0.5))
+   
+ 
+ 
+# Customize the legend 
+ superstore %>% 
+   group_by(product_category) %>% 
+   summarise(mean_profit = mean(profit)) %>%
+   ungroup() %>% 
+   mutate(total.profit = sum(mean_profit)) %>% 
+   #share profit 
+   group_by(product_category) %>% 
+   mutate(share = round(100*mean_profit/total.profit,2)) %>% #rounding 
+   ggplot(aes(x = "", y = share, fill = product_category)) +
+   geom_bar(stat = "identity", width = 1) + 
+   coord_polar(theta = "y") + 
+   labs(title = "Figure: Mean Profit by Product Category") + 
+   theme_void() + 
+   scale_fill_manual(values = c("Furniture" = "blue", 
+                                "Office Supplies" = "red", 
+                                "Technology" = "green"))+
+   # Add the numbers inside the pie 
+   geom_text(aes(label = share),
+             position = position_stack(vjust = 0.5))+ 
+   guides(fill = guide_legend(title = "This is the legend Title"))
+ 
+ 
+ 
+ 
+ 
+### ----------------------------------------------------------------------
 #' A bit more advanced
+### ----------------------------------------------------------------------
 
-
-#' Task 22: What customer segment and product category has the highest correlation between
+#' Task: What customer segment and product category has the highest correlation between
 #' unit price and order_quantity?
+
+ # considering the customer segments only
+ superstore %>%
+   select(customer_segment, order_quantity,unit_price) 
+ 
+superstore %>%
+  select(customer_segment, order_quantity,unit_price) %>%
+  group_by(customer_segment) %>%
+  summarize(cor(order_quantity,unit_price))
+
+browseURL("https://cran.r-project.org/web/packages/broom/vignettes/broom_and_dplyr.html")
+
+superstore %>% 
+  select(customer_segment,order_quantity,unit_price, product_category) %>% 
+  group_by(customer_segment, product_category) %>%
+  nest() -> nested 
+
+nested
+#nest() → Creates a nested data frame where each group (combination 
+#of customer_segment and product_category) is stored as a list-column named data.
+
+# Instead of spreading the grouped data across multiple rows, it bundles
+#all the remaining columns (order_quantity and unit_price) into a single
+#list-column for each unique (customer_segment, product_category) pair.
+
+# if you want to see what is inside the nested data
+nested$data
+
+#Now we can calculate the correlation between the variables in each of the list
+library(broom)
+nested %>% 
+  mutate(test = map(data, ~ cor.test(.x$unit_price, .x$order_quantity))) %>%  # S3 list-col
+  mutate(tidied = map(test, tidy)) %>% #the tidy() fun converts model outputs (like regression 
+  #results) into a clean, structured tibble format, making it easier to interpret and work with.
+  unnest(tidied)
+
+
+# elementary example on how map()
+library(purrr)
+# Two numeric vectors
+x <- c(1, 2, 3)
+# Square each element
+map(x, ~ .x^2) # List: 1, 4, 9, 16, 25
+
+# Another similar fun map2()
+y <- c(10, 20, 30)
+
+# Add corresponding elements
+map2(x, y, ~ .x + .y)
+#Here, map2() takes one element from x and one from y at the same index, adds them, and returns a list.
+map2_dbl(x, y, ~ .x + .y)
+
+#: Another example Creating Sentences
+names <- c("Alice", "Bob", "Charlie")
+ages <- c(25, 30, 22)
+# Combine names and ages into sentences
+map2(names, ages, ~ glue::glue("{.x} is {.y} years old."))
+map2_chr(names, ages, ~ glue::glue("{.x} is {.y} years old."))
+
+
+#' Task: Make a scatter plot of order_quantity vs unit_price (for all combination)
+nested$group <- 1:length(nested$customer_segment)
+
+library(glue)
+
+many_plots <- 
+  nested %>% 
+  mutate(plot = map2(data, 
+                     group,
+                     ~ ggplot(data = .x, aes(x = order_quantity, y = unit_price)) +
+                       ggtitle(glue("Group {.y}")) + 
+                       geom_point()))
+many_plots
+print(many_plots$plot) 
+
+
+
+#install.packages("cowplot")
+library(cowplot)
+cowplot::plot_grid(plotlist = many_plots$plot)
 
 
 #Task 23: Replicate the code for three provinces, i.e., Nunavu, British Columbia, Ontirruwa,  
