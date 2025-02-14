@@ -8,8 +8,9 @@ rm(list = ls())
 #' 2. Time - only has the time (e.g. 19:45:00) 
 #' 3. Datetime - has both the date and time (e.g. 2023-03-21 19:45:00)
 
-# date/time classes
-# three date/time classes are built-in in R; Date, POSIXct, and POSIXlt
+# date/time classes: 
+#   In R there are three date/time classes/built-in functions;
+#   Date, POSIXct, and POSIXlt
 
 # Date()
 #' this is the class to use if you have only dates, 
@@ -24,12 +25,12 @@ class(dt1)
 #The default format is yyyy-mm-dd
 # non-standard formats must be specified: 
 
-#as.Date("11-10-2020") # not ok!
+as.Date("11-10-2020") # not ok!
 # but 
-#as.Date("11-10-2020", format = "%d-%m-%Y")
+as.Date("11-10-2020", format = "%d-%m-%Y")
 
 # see list of format symbols:
-browseURL("https://www.statmethods.net/input/dates.html")
+browseURL("https://www.r-bloggers.com/2013/08/date-formats-in-r/")
 
 dt2 <- as.Date("04/20/2020", format = "%m/%d/%Y")
 dt2
@@ -40,18 +41,25 @@ dt3
 #convert between character and time objects.
 ?strptime #convert characters to time objects.
 ?strftime #converts time objects to characters
-#browseURL("https://www.statology.org/strptime-strftime-r/")
+browseURL("https://www.statology.org/strptime-strftime-r/")
+
+dt <- strptime("11-10-2020", format = "%m/%d/%Y")
+class(dt) # date 
+
+dc <- strftime(dt)
+class(dc)
 
 
 #### Calculations with dates:
 #Just like any other types of data on R, we can conduct
-#basic arithmetic operations using date/time data.
+# basic arithmetic operations using date/time data.
 
 # find the difference between dates:
 dt1-dt2
 
 difftime(dt1, dt2, units = "weeks")
 difftime(dt1, dt2, units = "hours")
+
 
 dt2-dt1
 
@@ -75,12 +83,13 @@ six.weeks <- seq(dt1, length = 6, by = "2 weeks") #14 days
 six.weeks
 
 # see the internal integer representation
-unclass(dt1)#Dates are represented as the number of days since 1970-01-01,
+unclass(dt1)# Dates are represented as the number of days since 1970-01-01,
 dt1 - as.Date("1970-01-01")
 
 
 
 ## posixct
+
 # If you have times in your data, this is usually the best class to use.
 
 # create some POSIXct objects:
@@ -138,6 +147,7 @@ tm1.lt
 trunc(tm1.lt, "days")
 trunc(tm1.lt, "mins")
 
+
 # chron:
 
 # this class is a good option when you donot need to deal with timezones
@@ -172,6 +182,8 @@ as.chron("2019-03-29 23:32:07") - as.chron("2019-03-30 03:45:26")
 # detach the chron package as it will interfere with lubridate later in this script.
 detach("package:chron", unload = TRUE)
 
+
+
 # summary of date/time classes
 # When you just have dates, use Date.
 # When you have times, POSIXct is usually the best,
@@ -180,6 +192,7 @@ detach("package:chron", unload = TRUE)
 
 
 # manipulating times and dates
+
 # lubridate
 # This package is a wrapper for POSIXct with more intuitive syntax.
 
@@ -249,7 +262,7 @@ with_tz(tm1.lub, "America/New_York")
 
 # change the time zone of an instant (keeping the same clock time):
 force_tz(tm1.lub, "America/New_York")
-#browseURL("http://uc-r.github.io/time_zones/")
+browseURL("http://uc-r.github.io/time_zones/")
 
 # some calculations with instants. Note that the units are seconds:
 tm2.lub - tm1.lub
