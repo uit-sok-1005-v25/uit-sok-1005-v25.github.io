@@ -41,10 +41,10 @@
 |||[Solution to the task](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Task_solution.R)|
 |||[Updated R codes for superstore](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/superstore_updated.R)|
 |14/02| Deadline: 16:00|[Assignment 2](https://docs.google.com/document/d/1S0Wa4DwJgMrzdGD9QQG8l-9nVQ9iIhdZ1OBxGzhewwM/edit?usp=sharing)|
-|14/02|6|More on Data Wrangling|
+|||More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
-|21/04|7|Dates, Time and Strings|
+|14/02|7|Dates, Time and Strings|
 |||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
 |||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
 |||[Working with date](https://www.statmethods.net/input/dates.html)|
