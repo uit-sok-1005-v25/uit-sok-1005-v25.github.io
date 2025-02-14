@@ -6,7 +6,7 @@ library(Quandl)
 library(tidyverse)
 
 # Import the Daily crude oil prices: Brent - Europe (DCOILBRENTEU) from FRED
-#browseURL("https://fred.stlouisfed.org/series/DCOILBRENTEU")
+browseURL("https://fred.stlouisfed.org/series/DCOILBRENTEU")
 
 loadSymbols("DCOILBRENTEU", src="FRED")
 
@@ -16,13 +16,13 @@ oil <- DCOILBRENTEU %>%
   rename(Value =DCOILBRENTEU) 
 
 head(oil) 
-View(oil) # NA's 
 
-#oil %>% filter_all(any_vars(is.na(.)))
-#colSums(is.na(oil))
+# MIssing values 
+colSums(is.na(oil))
 
 # copy oil data
 dframe <- oil
+
 # Try replacing NA's with previous recent value 
 dframe <- dframe %>% fill(Value,.direction = "down")
 
@@ -40,19 +40,19 @@ dframe %>%
   ggplot(aes(x=Date, y=Value)) + 
   geom_line() + theme_bw()
 
+# diffifferent color 
+dframe %>% ggplot(aes(x=Date, y=Value)) +
+  geom_line(color = "#20A0E0") + 
+  ggtitle("Daily Crude Oil Prices") + theme_bw()
+
 # Note the ordering of dates!
 dframe 
 tail(dframe)
-
-# flip order on Date
-dframe %>% arrange(Date) %>% head()
-
-# Change order, so that "time" calculations are correct
 # first row must be first time observation
 dframe <- dframe %>% arrange(Date)
 
 # How to measure returns
-#browseURL("https://en.wikipedia.org/wiki/Rate_of_return")
+browseURL("https://en.wikipedia.org/wiki/Rate_of_return")
 
 # Arithmetic returns, looses first observation
 dframe %>% 
@@ -108,57 +108,14 @@ dframe <- dframe %>%
 dframe %>% 
   ggplot(aes(x=Date, y=new_comp_log_ret)) + geom_line()
 
+
+
+
+
 # ----------------------------
 
 # Rename dframe back to oil 
 oil <- dframe
-ggplot(oil, aes(x=Date, y=Value)) + geom_line(color = "#20A0E0") + 
-  ggtitle("Daily Crude Oil Prices") + theme_bw()
-
-# Remember the order of dates!
-oil %>% head()
-
-# Change the order, so that calculations are correct.
-# First row must be first time observation,
-oil <- oil %>% arrange(Date)
-head(oil)
-
-#-----------------------
-
-
-# Read Quandl data
-
-# Gold prices, US$ per troy ounce
-
-#browseURL("https://www.quandl.com/tools/r")
-
-#browseURL("https://www.quandl.com/data/LBMA/GOLD-Gold-Price-London-Fixing")
-
-# The London Gold Fix involves gold dealers from London's five biggest bullion banks
-# establishing a common transaction price for a large pool of purchase and sale orders.
-# They do this twice each business day - first at 10:30am (the Morning Fix) and then
-# again at 3pm (the Afternoon Fix).
-gold <- Quandl("LBMA/GOLD")
-
-# Arrange dates
-gold <- gold %>% arrange(Date)
-head(gold)
-tail(gold)
-
-# Rename
-names(gold) <- c("Date","USD_AM","USD_PM","GBP_AM","GBP_PM","EURO_AM","EURO_PM")
-
-# make a copy
-gold_Quandl <- gold
-
-# Pick one price
-gold <- gold %>% select(Date, USD_PM) 
-
-# daily gpld prices
-ggplot(gold, aes(x=Date, y=USD_PM)) + geom_line(color = "#FC4E07") + 
-  ggtitle("US$ per troy ounce") + theme_bw()
-
-
 
 # calculate monthly averages....from the daily values 
 
@@ -202,20 +159,40 @@ str(oil)
 
 oil_month <- as_tsibble(oil, index = Date) %>% 
   index_by(year_month=yearmonth(Date)) %>% # index_by() is the counterpart of group_by() in temporal context
-  summarise(oil_avg = mean(Value, na.rm = TRUE))
+  summarise(oil_avg = mean(Value, na.rm = TRUE)) %>% 
+  mutate(Date = as.Date(year_month, format = "%Y %b")) 
 
 head(oil_month)
 str(oil_month)
 
-gold_month <- as_tsibble(gold, index = Date) %>% 
-  index_by(year_month=yearmonth(Date)) %>% 
-  summarise(gold_avg = mean(USD_PM, na.rm = TRUE))
+#################################################
+# Gold price 
+# You can try loading Gold price from Nasdaq, but first you need to have your own api
+# Read Quandl data
+# Gold prices, US$ per troy ounce
+#browseURL("https://www.quandl.com/tools/r")
+# Quandl.api_key("your api key")
+# gold <- Quandl("LBMA/GOLD")
+# head(gold)
+###############################################
 
-head(gold_month)
-str(gold_month)
+# Get the Gold future price from 
+library(readr)
+browseURL("https://www.investing.com/commodities/gold")
+Gold_price <- read_csv("https://raw.githubusercontent.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/refs/heads/main/Gold_price.csv")
 
-# Merge by date
-dframe <- left_join(oil_month, gold_month, by="year_month")
+head(Gold_price)
+
+Gold_price <- Gold_price %>% 
+  mutate(Date = mdy(Date)) %>% 
+  arrange(Date) %>% select(Date, Price) %>% 
+  rename(gold_avg=Price) # renaming Price as average monthly gold price
+
+head(Gold_price)
+
+
+# Merge oil and gold price by date
+dframe <- left_join(oil_month, Gold_price, by="Date")
 
 head(dframe)
 tail(dframe)
@@ -224,7 +201,7 @@ dframe <- dframe %>% drop_na()
 
 
 # change data from wide to long 
-dframe.long <- dframe %>% 
+dframe.long <- dframe %>% select(-Date) %>% 
      pivot_longer(-year_month,
                   names_to = "commodity",
                   values_to = "price")
@@ -235,9 +212,6 @@ str(dframe.long)
 dframe.long %>%
   ggplot(aes(x=year_month, y=price, col=commodity)) +
   geom_line()
-
-# Question to you: Rebase this plot using the Jan 2005 values=100
-
 
 
 # Rolling 12 month correlation
@@ -281,4 +255,3 @@ browseURL("https://slides.earo.me/rstudioconf19/#1")
 browseURL("https://otexts.com/fpp3/dhr.html")
 
 
-# Q: Create a dataframe that is the weekly average prices and plot it
