@@ -514,7 +514,7 @@ nested %>%
   #results) into a clean, structured tibble format, making it easier to interpret and work with.
   unnest(tidied)
 
-
+browseURL("https://purrr.tidyverse.org/")
 # elementary example on how map()
 library(purrr)
 # Two numeric vectors
