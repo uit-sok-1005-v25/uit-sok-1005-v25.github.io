@@ -40,7 +40,7 @@ dframe %>%
   ggplot(aes(x=Date, y=Value)) + 
   geom_line() + theme_bw()
 
-# diffifferent color 
+# different color 
 dframe %>% ggplot(aes(x=Date, y=Value)) +
   geom_line(color = "#20A0E0") + 
   ggtitle("Daily Crude Oil Prices") + theme_bw()
@@ -75,13 +75,15 @@ dframe %>% mutate(log_ret = c(NA,diff(log(Value)))) %>% head()
 # Compounding log returns
 dframe %>% 
   mutate(log_ret = log(Value/lag(Value)),
-         comp_log_ret = c(1, 1+cumsum(na.omit(log_ret)))) %>% head() # see https://rpubs.com/esteban926/978486
+         comp_log_ret = c(1, 1+cumsum(na.omit(log_ret)))) %>% head() 
+# see https://rpubs.com/esteban926/978486
 
 
 # Update dataframe with log returns
 dframe <- dframe %>%
   mutate(log_ret = log(Value/lag(Value)),
         comp_log_ret = c(1, 1+cumsum(na.omit(log_ret))))
+
 
 # plot log returns
 dframe %>%
@@ -101,7 +103,7 @@ dframe[dframe$Date == "2010-01-04","comp_log_ret"]$comp_log_ret
 dframe %>% 
   ggplot(aes(x=Date, y=100*comp_log_ret/dframe[dframe$Date == "2010-01-04","comp_log_ret"]$comp_log_ret)) + geom_line()
 
-# or mutate new variable first
+# Alternatively, mutate new variable first
 dframe <- dframe %>% 
   mutate(new_comp_log_ret = 100*comp_log_ret/comp_log_ret[Date == "2010-01-04"]) 
 
@@ -109,21 +111,28 @@ dframe %>%
   ggplot(aes(x=Date, y=new_comp_log_ret)) + geom_line()
 
 
-
-
-
 # ----------------------------
 
-# Rename dframe back to oil 
-oil <- dframe
-
+# Rename dframe back to oil & select 
+oil <- dframe %>% select(Date,Value)
+oil
 # calculate monthly averages....from the daily values 
 
 library(tsibble)
 # Coerce to a tsibble with as_tsibble() 
+
 # To coerce a data frame to tsibble, we need to declare key and index.
 # key: identifying variables that define series
 # index: a variable that represents time
+
+oil_month <- as_tsibble(oil, index = Date) %>% 
+  index_by(year_month=yearmonth(Date)) %>% 
+  # index_by() is the counterpart of group_by() in temporal context
+  summarise(oil_avg = mean(Value, na.rm = TRUE)) %>% 
+  mutate(Date = as.Date(year_month, format = "%Y %b")) 
+
+head(oil_month)
+str(oil_month)
 
 # As you coerce a dataframe to tsibble object using tsibble,
 # An interval is automatically obtained based on the corresponding
@@ -139,7 +148,6 @@ library(tsibble)
 # Daily	Date/difftime
 # Subdaily	POSIXt/difftime/hms
 
-
 # You cab read more about Tsibble On: 
 browseURL("https://cran.rstudio.com/web/packages/tsibble/vignettes/intro-tsibble.html")
 browseURL("https://github.com/tidyverts/tsibble")
@@ -153,20 +161,10 @@ browseURL("https://blog.earo.me/2018/02/06/tsibble-or-tibbletime/")
 #browseURL("https://otexts.com/fpp3/tsibbles.html")
 
 
-head(oil)
-str(oil)
 
-
-oil_month <- as_tsibble(oil, index = Date) %>% 
-  index_by(year_month=yearmonth(Date)) %>% # index_by() is the counterpart of group_by() in temporal context
-  summarise(oil_avg = mean(Value, na.rm = TRUE)) %>% 
-  mutate(Date = as.Date(year_month, format = "%Y %b")) 
-
-head(oil_month)
-str(oil_month)
+# Gold price 
 
 #################################################
-# Gold price 
 # You can try loading Gold price from Nasdaq, but first you need to have your own api
 # Read Quandl data
 # Gold prices, US$ per troy ounce
@@ -184,8 +182,9 @@ Gold_price <- read_csv("https://raw.githubusercontent.com/uit-sok-1005-v25/uit-s
 head(Gold_price)
 
 Gold_price <- Gold_price %>% 
+  select(Date, Price) %>% 
   mutate(Date = mdy(Date)) %>% 
-  arrange(Date) %>% select(Date, Price) %>% 
+  arrange(Date) %>% 
   rename(gold_avg=Price) # renaming Price as average monthly gold price
 
 head(Gold_price)
@@ -198,18 +197,13 @@ head(dframe)
 tail(dframe)
 
 dframe <- dframe %>% drop_na()
+dframe
 
-
-# change data from wide to long 
-dframe.long <- dframe %>% select(-Date) %>% 
+# change data from wide to long and ggplot 
+ dframe %>% select(-Date) %>% 
      pivot_longer(-year_month,
                   names_to = "commodity",
-                  values_to = "price")
-
-head(dframe.long)
-str(dframe.long)
-
-dframe.long %>%
+                  values_to = "price") %>% 
   ggplot(aes(x=year_month, y=price, col=commodity)) +
   geom_line()
 
@@ -235,17 +229,22 @@ dframe %>%
   geom_hline(yintercept=mean.cor, linetype="dashed", color = "red", size=2) +
   geom_hline(yintercept=mean.12.cor, linetype="dashed", color = "blue", size=2)
 
+
 # 12 month moving average
 # Turn the normal mean function into a rolling mean with a 12 row window
 mean_roll_12 <- rollify(mean, window = 12)
 
-dframe.long <- dframe.long %>% 
-       group_by(commodity) %>% 
-      mutate(MA_12 = mean_roll_12(price))
-
+# long format 
+dframe.long <- dframe %>% select(-Date) %>% 
+  pivot_longer(-year_month,
+               names_to = "commodity",
+               values_to = "price") 
 dframe.long
 
+# plot 
 dframe.long %>% 
+       group_by(commodity) %>% 
+      mutate(MA_12 = mean_roll_12(price)) %>% 
   ggplot(aes(x = year_month, y = MA_12, color = commodity)) + geom_line() 
 
 # The broom equivalent for time series, sweep
