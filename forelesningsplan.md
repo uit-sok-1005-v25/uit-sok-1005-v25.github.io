@@ -44,12 +44,18 @@
 |||More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
-|14/02|7|Dates, Time and Strings|
+|21/02|7|Dates, Time and Strings|
 |||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
 |||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
 |||[Working with date](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Working_with_dates.R)|
 |||[Dates and Time](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Dates_and_times_lubridate.R)|
 |||[Working with time series](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Working_with_time_series.R)|
+|28/02|7|Categorical Data and Communicating with Data|
+|||Chapter 15, 26 and 27 [RfDC](https://r4ds.had.co.nz/)|
+|||Categorical Data in the Tidyverse [datacamp](https://r4ds.had.co.nz/)|
+|||Communicating with Data in the Tidyverse [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Fcommunicating-with-data-in-the-tidyverse&dc_referrer=https%3A%2F%2Fuit-sok-1005-v23.github.io%2F)|
+||||
+||||
 ||||
 ||||
 ||||
