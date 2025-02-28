@@ -44,7 +44,7 @@
 |||More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
-|21/02|7|Dates, Time and Strings|
+|21/02|6|Dates, Time and Strings|
 |||Working with Dates and Times in R [datacamp](https://app.datacamp.com/learn/courses/working-with-dates-and-times-in-r)|
 |||String Manipulation with stringr in R [datacamp](https://app.datacamp.com/learn/courses/string-manipulation-with-stringr-in-r)|
 |||[Working with date](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Working_with_dates.R)|
