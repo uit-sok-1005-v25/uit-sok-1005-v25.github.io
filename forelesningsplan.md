@@ -57,7 +57,7 @@
 |||Communicating with Data in the Tidyverse [datacamp](https://www.datacamp.com/users/sign_in?redirect=http%3A%2F%2Fapp.datacamp.com%2Flearn%2Fcourses%2Fcommunicating-with-data-in-the-tidyverse&dc_referrer=https%3A%2F%2Fuit-sok-1005-v23.github.io%2F)|
 |||[Factors](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Factors.R)|
 |||[Data wrangling practice questions](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Data%20Wrangling%20Practice.R)|
-||||
+|07/03| Deadline: 16:00|[Assignment 3](https://docs.google.com/document/d/1kH7M6UoHUlmYLbhxtK5aauS0hdMIVO4h-ncOVe9t2AM/edit?usp=sharing)|
 ||||
 ||||
 ||||
