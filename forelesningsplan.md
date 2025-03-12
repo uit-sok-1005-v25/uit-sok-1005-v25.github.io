@@ -63,7 +63,7 @@
 |12/03||Assignment 4 - OUT|
 |18/03|10|[Interaktive nettsider](https://espensirnes.github.io/notebooks/html/11%20-%20interaktive%20websider.html)|
 |23/03||Assignment 4 - IN|
-|27/03|11|[GIT / IDE]?(https://espensirnes.github.io/notebooks/html/8%20-%20Git,%20IDE'er%20og%20et%20lite%20spill.html)|
+|27/03|11|[GIT / IDE](https://espensirnes.github.io/notebooks/html/8%20-%20Git,%20IDE'er%20og%20et%20lite%20spill.html) ?|
 |28/03||Assignment 5 - OUT (lecture presentation)|
 |22/04|09 - 11|Assignment 5 - IN (student presentation)|
 |23/04|09 - 15|Assignment 5 - IN (student presentation)|
