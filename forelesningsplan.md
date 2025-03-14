@@ -66,10 +66,10 @@
 |27/03||[Deadline to register eventual whishes for "Assignment 5" presentation. Note: read the text](https://uit.instructure.com/courses/37292/assignments/130177)|
 |27/03|11|[GIT / IDE](https://espensirnes.github.io/notebooks/html/8%20-%20Git,%20IDE'er%20og%20et%20lite%20spill.html) ?|
 |28/03||Assignment 5 - OUT (lecture presentation)|
-|22/04|09 - 11|Assignment 5 - IN (student presentation)|
-|23/04|09 - 15|Assignment 5 - IN (student presentation)|
-|24/04|09-10 & 15-16|Assignment 5 - IN (student presentation)|
-|25/04|13-15|Assignment 5 - IN (student presentation)|
+|22/04|09 - 11(tentative)|Assignment 5 - IN (student presentation)|
+|23/04|09 - 15(tentative)|Assignment 5 - IN (student presentation)|
+|24/04|09-10 & 15-16 (tentative)|Assignment 5 - IN (student presentation)|
+|25/04|13-15 (tentative)|Assignment 5 - IN (student presentation)|
    
 
 
