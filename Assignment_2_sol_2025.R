@@ -4,7 +4,7 @@
 
 # Task 1.
 
-# WE did something similar in the lecture, look at the Codes from the Lectures.
+# WE did similar things in the lectures, look at the Codes from the Lectures.
 
 
 
