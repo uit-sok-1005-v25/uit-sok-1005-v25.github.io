@@ -42,6 +42,7 @@
 |||[Solution to the task](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Task_solution.R)|
 |||[Updated R codes for superstore](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/superstore_updated.R)|
 |14/02| Deadline: 16:00|[Assignment 2](https://docs.google.com/document/d/1S0Wa4DwJgMrzdGD9QQG8l-9nVQ9iIhdZ1OBxGzhewwM/edit?usp=sharing)|
+|||[Solution to Assignment 2](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Assignment_2_sol_2025.R)|
 |||More on Data Wrangling|
 |||Reshaping Data with tidyr [datacamp](https://app.datacamp.com/learn/courses/reshaping-data-with-tidyr)|
 |||Programming with dplyr [datacamp](https://app.datacamp.com/learn/courses/programming-with-dplyr)|
@@ -59,6 +60,7 @@
 |||[Factors](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Factors.R)|
 |||[Data wrangling practice questions](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Data%20Wrangling%20Practice.R)|
 |07/03| Deadline: 16:00|[Assignment 3](https://docs.google.com/document/d/1kH7M6UoHUlmYLbhxtK5aauS0hdMIVO4h-ncOVe9t2AM/edit?usp=sharing)|
+|||[Solution to Assignment 3](https://github.com/uit-sok-1005-v25/uit-sok-1005-v25.github.io/blob/main/Assignment_3_sol_2025.R)|
 |03/03|8|[Nettskraping](https://espensirnes.github.io/notebooks/html/9%20-%20webskraping%20med%20python.html)|
 |11/03|9|[Statsmods](https://espensirnes.github.io/notebooks/html/10%20-%20statsmodels.html)|
 |12/03||[Assignment 4 - OUT](https://uit.instructure.com/courses/37292/assignments/130163)|
