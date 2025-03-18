@@ -66,9 +66,9 @@
 |12/03||[Assignment 4 - OUT](https://uit.instructure.com/courses/37292/assignments/130163)|
 |18/03|10|[Interaktive nettsider](https://espensirnes.github.io/notebooks/html/11%20-%20interaktive%20websider.html)|
 |23/03||Assignment 4 - IN|
-|27/03||[Deadline to register eventual whishes for "Assignment 5" presentation](https://uit.instructure.com/courses/37292/assignments/130177). Note: read the text.|
-|27/03|11|[GIT / IDE](https://espensirnes.github.io/notebooks/html/8%20-%20Git,%20IDE'er%20og%20et%20lite%20spill.html) ?|
-|28/03||Assignment 5 - OUT (lecture presentation)|
+|26/03||[Deadline to register eventual whishes for "Assignment 5" presentation](https://uit.instructure.com/courses/37292/assignments/130177). Note: read the text.|
+|27/03|11|[GIT?](https://espensirnes.github.io/notebooks/html/8%20-%20Git,%20IDE'er%20og%20et%20lite%20spill.html) ?|
+|27/03||Assignment 5 - OUT (lecture presentation)|
 |22/04|09 - 11(tentative)|Assignment 5 - IN (student presentation)|
 |23/04|09 - 15(tentative)|Assignment 5 - IN (student presentation)|
 |24/04|09-10 & 15-16 (tentative)|Assignment 5 - IN (student presentation)|
