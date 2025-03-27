@@ -69,10 +69,8 @@
 |26/03||[Deadline to register eventual whishes for "Assignment 5" presentation](https://uit.instructure.com/courses/37292/assignments/130177). Note: read the text.|
 |27/03|11|[GIT - 1 (overview)](https://www.youtube.com/watch?v=e9lnsKot_SQ), [GIT - 2 (short tutourial)](https://www.youtube.com/watch?v=K6Q31YkorUE), [GIT - 3 (longer tutourial)](https://www.youtube.com/watch?v=8JJ101D3knE)|
 |27/03||Assignment 5 - OUT (lecture presentation)|
-|22/04|09 - 11(tentative)|Assignment 5 - IN (student presentation)|
-|23/04|09 - 15(tentative)|Assignment 5 - IN (student presentation)|
-|24/04|09-10 & 15-16 (tentative)|Assignment 5 - IN (student presentation)|
-|25/04|13-15 (tentative)|Assignment 5 - IN (student presentation)|
+|24/04|09-10 & 14-16|Assignment 5 - IN (student presentation)|
+|25/04|09-10 & 12-16 (tentative)|Assignment 5 - IN (student presentation)|
    
 
 
